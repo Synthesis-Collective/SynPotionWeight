@@ -4,8 +4,8 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
     <ItemGroup>
-      <PackageReference Include="Mutagen.Bethesda" Version="0.21.3" />
+      <PackageReference Include="Mutagen.Bethesda" Version="0.21.4" />
+      <PackageReference Include="Mutagen.Bethesda.Synthesis" Version="0.10.19" />
       <PackageReference Include="Mutagen.Bethesda.FormKeys.SkyrimSE" Version="1.0.0" />
-      <PackageReference Include="Mutagen.Bethesda.Synthesis" Version="0.10.18" />
     </ItemGroup>
 </Project>
