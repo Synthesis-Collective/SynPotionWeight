@@ -27,7 +27,7 @@ namespace SynPotionWeight
 
         public static void RunPatch(SynthesisState<ISkyrimMod, ISkyrimModGetter> state)
         {
-            var weights = JObject.Parse(File.ReadAllText(Path.Combine(state.ExtraSettingsDataPath, "settings.json"))).ToObject<Settings>()?.WeightMult??0.2f;
+            var weights = JObject.Parse(File.ReadAllText(Path.Combine(state.ExtraSettingsDataPath, "settings.json"))).ToObject<Settings>().WeightMult;
             foreach(var alch in state.LoadOrder.PriorityOrder.OnlyEnabled().Ingestible().WinningOverrides()) {
                 if((alch.Keywords?.Contains(Skyrim.Keyword.VendorItemPotion)??false) || (alch.Keywords?.Contains(Skyrim.Keyword.VendorItemPoison)??false)) {
                     Console.WriteLine($"Patching {alch.Name}");
