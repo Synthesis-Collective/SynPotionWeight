@@ -1,5 +1,5 @@
 namespace SynPotionWeight.Types {
-    public class Weights {
+    public struct Settings {
         public float WeightMult;
     }
 }
