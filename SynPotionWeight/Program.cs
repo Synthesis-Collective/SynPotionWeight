@@ -8,7 +8,6 @@ using Mutagen.Bethesda.FormKeys.SkyrimSE;
 using Newtonsoft.Json.Linq;
 using SynPotionWeight.Types;
 
-
 namespace SynPotionWeight
 {
     public class Program
