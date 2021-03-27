@@ -1,11 +1,9 @@
 using System;
-using System.IO;
 using System.Threading.Tasks;
 using Mutagen.Bethesda;
 using Mutagen.Bethesda.Synthesis;
 using Mutagen.Bethesda.Skyrim;
 using Mutagen.Bethesda.FormKeys.SkyrimSE;
-using Newtonsoft.Json.Linq;
 using SynPotionWeight.Types;
 
 namespace SynPotionWeight
