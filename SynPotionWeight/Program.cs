@@ -5,6 +5,7 @@ using Mutagen.Bethesda.Synthesis;
 using Mutagen.Bethesda.Skyrim;
 using Mutagen.Bethesda.FormKeys.SkyrimSE;
 using SynPotionWeight.Types;
+using Noggog;
 
 namespace SynPotionWeight
 {
@@ -23,15 +24,15 @@ namespace SynPotionWeight
 
         public static void RunPatch(IPatcherState<ISkyrimMod, ISkyrimModGetter> state)
         {
-            foreach (var alch in state.LoadOrder.PriorityOrder.OnlyEnabled().Ingestible().WinningOverrides())
+            state.LoadOrder.PriorityOrder.OnlyEnabled().Ingestible().WinningOverrides().ForEach(alch =>
             {
-                if (alch.Keywords?.Contains(Skyrim.Keyword.VendorItemPotion.FormKey)??false)
+                if (alch.Keywords?.Contains(Skyrim.Keyword.VendorItemPotion.FormKey) ?? false)
                 {
                     Console.WriteLine($"Patching {alch.Name}");
                     var nalch = state.PatchMod.Ingestibles.GetOrAddAsOverride(alch);
                     nalch.Weight *= config.WeightMult;
                 }
-            }
+            });
         }
     }
 }
