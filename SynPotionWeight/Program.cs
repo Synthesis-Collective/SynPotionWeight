@@ -12,7 +12,7 @@ namespace SynPotionWeight
     public class Program
     {
         static Lazy<Settings> LazySettings = new();
-        static Settings config => LazySettings.Value;
+        static Settings Config => LazySettings.Value;
         public static async Task<int> Main(string[] args)
         {
             return await SynthesisPipeline.Instance
@@ -30,7 +30,7 @@ namespace SynPotionWeight
                 {
                     Console.WriteLine($"Patching {alch.Name}");
                     var nalch = state.PatchMod.Ingestibles.GetOrAddAsOverride(alch);
-                    nalch.Weight *= config.WeightMult;
+                    nalch.Weight *= Config.WeightMult;
                 }
             });
         }
