@@ -26,7 +26,7 @@ namespace SynPotionWeight
         {
             state.LoadOrder.PriorityOrder.OnlyEnabled().Ingestible().WinningOverrides().ForEach(alch =>
             {
-                if (alch.Keywords?.Contains(Skyrim.Keyword.VendorItemPotion.FormKey) ?? false)
+                if (alch.HasKeyword(Skyrim.Keyword.VendorItemPotion.FormKey))
                 {
                     Console.WriteLine($"Patching {alch.Name}");
                     var nalch = state.PatchMod.Ingestibles.GetOrAddAsOverride(alch);
