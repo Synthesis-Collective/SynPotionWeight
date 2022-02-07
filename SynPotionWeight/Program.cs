@@ -6,9 +6,9 @@ using Mutagen.Bethesda.FormKeys.SkyrimSE;
 using Mutagen.Bethesda.Synthesis;
 using Mutagen.Bethesda.Skyrim;
 
-using SynPotionWeight.Types;
-
 using Noggog;
+
+using SynPotionWeight.Types;
 
 namespace SynPotionWeight
 {
