@@ -26,11 +26,11 @@ namespace SynPotionWeight
         {
             state.LoadOrder.PriorityOrder.OnlyEnabled().Ingestible().WinningOverrides().ForEach(alch =>
             {
-                if (alch.HasKeyword(Skyrim.Keyword.VendorItemPotion.FormKey))
+                if (alch.HasKeyword(Skyrim.Keyword.VendorItemPotion) || alch.HasKeyword(Skyrim.Keyword.VendorItemPoison))
                 {
                     Console.WriteLine($"Patching {alch.Name}");
                     var nalch = state.PatchMod.Ingestibles.GetOrAddAsOverride(alch);
-                    nalch.Weight *= Config.WeightMult;
+                    nalch.Weight = Config.Weight;
                 }
             });
         }
